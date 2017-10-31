@@ -2,7 +2,7 @@
 
 **User Story 1**
 
-As a customer, I want to purchase food via a web app so I can do so with minimum effort and trouble.
+As a **customer**, I want to **purchase food via a web app** so I can **do so with minimum effort and trouble.**
 
 <u>Acceptance Criteria:</u>
 
@@ -13,7 +13,7 @@ I would like to place a food order and pick up in a timely manner.
 
 **User Story 2**
 
-As a user, I want an app to integrate with my social media accounts so I can view AfriCuisine activity on my feeds.
+As a **user**, I want **an app to integrate with my social media accounts** so I can **view AfriCuisine activity on my feeds.**
 
 <u>Acceptance Criteria</u>
 
@@ -23,7 +23,7 @@ the push of a button.
 --------------------------------------------------------------------
 **User Story 3**
 
-As a paying customer I want my online transactions to be secure so I rest easy at night.
+As a **paying customer** I want **my online transactions to be secure** so I can **rest easy at night.**
 
 <u>Acceptance Criteria:</u>
 
