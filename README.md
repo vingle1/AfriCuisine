@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # Restaurant Project
-=======
+
 # AfriCuisine
 
 ## Executive Summary
