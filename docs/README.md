@@ -2,7 +2,7 @@
 
 **User Stories 1**
 
-As a customer I would like to purchase food with minimum effort and trouble.
+As a customer, I would like to purchase food with minimum effort and trouble.
 
 <u>Acceptance Criteria:</u>
 
@@ -30,3 +30,23 @@ As a paying customer I want my online transactions to be fast and secure
 Through seamless integration be able to pay using my credit card with one click.
 
 -------------------------------------------------------------
+
+# Diagrams
+
+## Mockup Diagram
+
+Add the diagram here
+
+## Architecture Diagrams
+
+### Context
+
+Add the diagram here
+
+### Container
+
+Add the diagram here
+
+### Component
+
+Add the diagram here 
