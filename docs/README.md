@@ -4,9 +4,9 @@
 
 As a **customer**, I want to **purchase food via a web app** so I can **do so with minimum effort and trouble.**
 
-<u>Acceptance Criteria:</u>
+**Acceptance Criteria:**
 
-With very little effort and need to create a new username / password
+* With very little effort and need to create a new username / password
 I would like to place a food order and pick up in a timely manner.
 
 ------------------------------------------------------------------
@@ -15,9 +15,9 @@ I would like to place a food order and pick up in a timely manner.
 
 As a **user**, I want **an app to integrate with my social media accounts** so I can **view AfriCuisine activity on my feeds.**
 
-<u>Acceptance Criteria</u>
+**Acceptance Criteria**
 
-Be able to sync all my social media activity regarding AfriCuisine with
+* Be able to sync all my social media activity regarding AfriCuisine with
 the push of a button.
 
 --------------------------------------------------------------------
@@ -25,9 +25,9 @@ the push of a button.
 
 As a **paying customer** I want **my online transactions to be secure** so I can **rest easy at night.**
 
-<u>Acceptance Criteria:</u>
+**Acceptance Criteria:**
 
-Through seamless integration be able to pay using my credit card with one click.
+* Through seamless integration be able to pay using my credit card with one click.
 
 -------------------------------------------------------------
 
