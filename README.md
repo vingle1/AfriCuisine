@@ -1,4 +1,2 @@
 # RestaurantProject
 
-## Test
-second Test
