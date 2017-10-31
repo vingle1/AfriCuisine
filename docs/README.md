@@ -33,7 +33,7 @@ Through seamless integration be able to pay using my credit card with one click.
 
 **User Story 1**
 
-As a **restaurant chef**, I want to **see the food order list**, so I can **start making the food**.
+As a **restaurant chef**, I want to **see the food order list**, so I can **start preparing the order**.
 
 **Acceptance Criteria:**
 * On the admin page, chef should be able see all the orders.
@@ -56,6 +56,7 @@ As a **customer**, I want to **get notified of my expected orders**, so **I can 
 * Customer should also get a text notification regarding the food order pickup time.  
 
 **User Story 4**
+
 As a **customer** in hurry, I want to **login quickly**, so that **I can order faster**.
 
 **Acceptance Criteria:**
@@ -63,6 +64,7 @@ As a **customer** in hurry, I want to **login quickly**, so that **I can order f
 * Customer should be able to login using guest profile by providing email id and phone number.
 
 **User Story 5**
+
 As a **customer**, I want to **provide my email**, so that **I can get details about offers and special events**.
 
 **Acceptance Criteria:**
