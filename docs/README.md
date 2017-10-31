@@ -2,32 +2,32 @@
 
 **User Story 1**
 
-As a **customer**, I want to **purchase food via a web app** so I can **do so with minimum effort and trouble.**
+As a customer, I would like to purchase food with minimum effort and trouble.
 
-**Acceptance Criteria:**
+<u>Acceptance Criteria:</u>
 
-* With very little effort and need to create a new username / password
+With very little effort and need to create a new username / password
 I would like to place a food order and pick up in a timely manner.
 
 ------------------------------------------------------------------
 
 **User Story 2**
 
-As a **user**, I want **an app to integrate with my social media accounts** so I can **view AfriCuisine activity on my feeds.**
+As a user, I want an app to integrate with my social media accounts so that I can view AfriCuisine activity on my feeds.
 
-**Acceptance Criteria**
+<u>Acceptance Criteria</u>
 
-* Be able to sync all my social media activity regarding AfriCuisine with
+Be able to sync all my social media activity regarding AfriCuisine with
 the push of a button.
 
 --------------------------------------------------------------------
 **User Story 3**
 
-As a **paying customer** I want **my online transactions to be secure** so I can **rest easy at night.**
+As a paying customer I want my online transactions to be fast and secure
 
-**Acceptance Criteria:**
+<u>Acceptance Criteria:</u>
 
-* Through seamless integration be able to pay using my credit card with one click.
+Through seamless integration be able to pay using my credit card with one click.
 
 -------------------------------------------------------------
 
@@ -70,6 +70,34 @@ As a **customer**, I want to **provide my email**, so that **I can get details a
 **Acceptance Criteria:**
 
 * Customer should be able to sign up for newsletters by giving an email id.
+
+**USer Stories 6**
+
+As a **user**, I want to **be able to search for items**, so **I can determine my choice**.
+
+**Acceptance Criteria:**
+
+-	Upon search bottom, the website shall display the list menu 
+-	On the add bottom, the user should add the item in the chart
+
+**User Stories 7 **
+
+As a **user**, I want to **be able to register**, so **I can keep track of my transactions**
+
+**Acceptance Criteria:**
+
+-	The website shall notify the user when he registers via his social media or email
+-	The system shall the user the user to login upon registration
+
+**User Stories 8** 
+
+As a **user**, I want to **be able to submit my order**, so that can I **pay for it**.
+
+**Acceptance Criteria:**
+
+-	The system shall be display the total amount of the order
+-	The system shall notify the store owner via email upon submission  
+
 
 
 
