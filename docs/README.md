@@ -34,12 +34,28 @@ As a **paying customer** I want **my online transactions to be secure** so I can
 
 **User Story 1**
 
+As a **customer** in hurry, I want to **login quickly**, so that **I can order faster**.
+
+**Acceptance Criteria:**
+* Customer should be able to login using existing social media profiles.
+* Customer should be able to login using guest profile by providing email id and phone number.
+
+**User Story 2**
+
+As a **customer**, I want to **provide my email**, so that **I can get details about offers and special events**.
+
+**Acceptance Criteria:**
+
+* Customer should be able to sign up for newsletters by giving an email id.
+
+**User Story 3**
+
 As a **restaurant chef**, I want to **see the food order list**, so I can **start preparing the order**.
 
 **Acceptance Criteria:**
 * On the admin page, chef should be able see all the orders.
 
-**User Story 2**
+**User Story 4**
 
 As a **restaurant owner**, I want to **update food menu**, so I can **keep up with the supply and demand**.
 
@@ -47,7 +63,7 @@ As a **restaurant owner**, I want to **update food menu**, so I can **keep up wi
 
 * On the admin page, restaurant owner should be able to update food menu easily.
 
-**User Story 3**
+**User Story 5**
 
 As a **customer**, I want to **get notified of my expected orders**, so **I can pick them up on time**.
 
@@ -56,21 +72,7 @@ As a **customer**, I want to **get notified of my expected orders**, so **I can 
 * On the checkout page, customer should be able to get estimated food order pickup time.
 * Customer should also get a text notification regarding the food order pickup time.  
 
-**User Story 4**
-
-As a **customer** in hurry, I want to **login quickly**, so that **I can order faster**.
-
-**Acceptance Criteria:**
-* Customer should be able to login using existing social media profiles.
-* Customer should be able to login using guest profile by providing email id and phone number.
-
-**User Story 5**
-
-As a **customer**, I want to **provide my email**, so that **I can get details about offers and special events**.
-
-**Acceptance Criteria:**
-
-* Customer should be able to sign up for newsletters by giving an email id.
+------------------------------------------------------------------------------------
 
 **USer Stories 6**
 
