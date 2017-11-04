@@ -2,7 +2,7 @@
 
 **User Story 1**
 
-As a **customer**, I want to **purchase food via a web application** so I can **do it with minimum effort and time.**
+As a **customer**, I want to **purchase food via a web application**, so I can **do it with minimum effort and time.**
 
 **Acceptance Criteria:**
 
