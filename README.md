@@ -1,7 +1,7 @@
 # AfriCuisine
 
 ## Executive Summary
-The purpose of this project is to provide customers with fast and secure methods to place food orders online. Through the web application, the restaurant will be able to take more orders, to promote their business, and it will help the restaurant owner to manage requests. 
+The purpose of this project is to provide customers with fast and secure methods to place food orders online. Through the web application, the restaurant will be able to take more orders, promote their business, and it will help the restaurant owner to manage requests. 
 The web application will allow Africuisine to increase their product offerring in the community, while at the same time allowing customers to use social media accounts to login quickly. Africuisine will now be able to provide a secure online payment option. Customers will also be notified via texts or emails when their orders are ready.
 
 ## Installation
