@@ -5,7 +5,30 @@ The main objective of this project is to provide customers with fast and secure 
 
 ## Installation
 
+#### Prerequisites
+* Make sure you have [Docker](https://www.docker.com/) installed on your computer.
+
+Build the docker image from the provided Docker-file using:
+
+```bash
+git clone https://github.com/vingle1/AfriCuisine.git
+cd AfriCuisine
+docker-compose build
+```
+Setup the database:
+```bash
+docker-compose run django bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser --username admin --email admin
+exit
+```
 ## Getting Started
+To run the app:
+```bash
+docker-compose up
+```
+Visit the specific URL(on which Docker is running) and then follow in-app menus for help using specific feature.
 
 ## License
 
