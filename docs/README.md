@@ -104,7 +104,24 @@ As a **malicious user**, I want to **sniff on network data between customer and 
 
 ## Mockup Diagrams
 
-Add the diagram here
+#### AfriCuisine/index page
+![Home Page](/docs/images/mc1.jpg)
+
+#### AfriCuisine/contact page
+![Contact Page](/docs/images/mc2.jpg)
+
+#### AfriCuisine/about page
+![About Page](/docs/images/mc3.jpg)
+
+#### AfriCuisine/menu page
+![Menu Page](/docs/images/mc4.jpg)
+
+#### AfriCuisine/checkout page
+![Checkout Page](/docs/images/mc5.jpg)
+
+#### AfriCuisine/payment page
+![Payment Page](/docs/images/mc6.jpg)
+
 
 ## Architecture Diagrams
 
@@ -116,6 +133,6 @@ Add the diagram here
 
 Add the diagram here
 
-### Component
+### Components
 
 Add the diagram here
