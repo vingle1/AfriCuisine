@@ -59,10 +59,50 @@ As a **restaurant owner**, I want to **update food menu**, so I can **keep up wi
 
 * On the admin page, restaurant owner should be able to update food menu easily.
 
+# Mis-User stories
+
+**Mis-User Story 1**
+
+As a **malicious user**, I want to **inject malicious scripts into the web page**, so I can **alter the information on a web page**.
+
+**Mitigation Criteria:**
+* Implement input validation on both syntactical and semantic level.
+* Use input sanitization libraries such as python bleach.
+
+**Mis-User Story 2**
+
+As an **evil competitor**, I want to **carry out denial of service attack on the web server**, so I can **disrupt services of the restaurant**.
+
+**Mitigation Criteria:**
+* Implement strong firewall rules on the OS which is hosting the web server.
+* Block ports which are not used.
+* Maintain database backups regularly.
+
+**Mis-User Story 3**
+
+As a **disgruntled employee**, I want to **alter food menu**, so I can **disrupt restaurant services**.
+
+**Mitigation Criteria:**
+* Implement least privilege mechanism and enforce authentication.
+
+**Mis-User Story 4**
+
+As a **malicious user**, I want to **inject malicious scripts into database**, so I can **steal sensitive information**.
+
+**Mitigation Criteria:**
+* Implement input validation on server side.
+* Implement least privilege access and setup strong database admin credentials
+
+**Mis-User Story 5**
+
+As a **malicious user**, I want to **sniff on network data between customer and restaurant**, so I can **steal information**.
+
+**Mitigation Criteria:**
+* Implement strong encryption mechanisms by using HTTPS connection between client and server.
 
 # Diagrams
 
-## Mockup Diagram
+## Mockup Diagrams
 
 Add the diagram here
 
