@@ -127,12 +127,21 @@ As a **malicious user**, I want to **sniff on network data between customer and 
 
 ### Context
 
-Add the diagram here
+![context image](/docs/images/ad1-context.png)
 
 ### Container
 
-Add the diagram here
+![container image](/docs/images/ad2-container.png)
 
 ### Components
 
-Add the diagram here
+![component1 image](/docs/images/ad3-component-django.png)
+
+![component2 image](/docs/images/ad4-component-database-server.png)
+
+![component3 image](/docs/images/ad5-component-ember.png)
+
+
+[Back to Top](#userstories)
+
+[Main Readme-page](/README.md)  
