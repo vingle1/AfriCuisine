@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'africuisine',
+    modulePrefix: 'frontend',
     environment,
     rootURL: '/',
     locationType: 'auto',
