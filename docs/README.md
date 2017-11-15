@@ -6,8 +6,8 @@ As a **customer**, I want to **purchase food via a web application**, so I can *
 
 **Acceptance Criteria:**
 
-* Customer should be able to place an order in as few minutes as possible.
-* Customer should be able to see advertisement consisting of best offers and specials.  
+* Customer should be able to place an order in less than 5 minutes as possible.
+* Customer should be able to see important advertisements/specials on the home page.  
 
 **User Story 2**
 
@@ -42,14 +42,14 @@ As a **Customer**, I want to **be able to search for particular food items**, so
 
 **Acceptance Criteria:**
 
--	User should be able to find menu items quickly with the dynamic search bar.
+-	User should be able to find menu items quickly by price,food name, and type on the search bar.
 
 **User Story 6**
 
 As a **restaurant chef**, I want to **see the food order list**, so I can **start preparing the order**.
 
 **Acceptance Criteria:**
-* On the admin page, chef should be able see all the orders.
+* On the admin page, chef should be able see all the incomming orders by date,time,and food type.
 
 **User Story 7**
 
@@ -57,7 +57,7 @@ As a **restaurant owner**, I want to **update food menu**, so I can **keep up wi
 
 **Acceptance Criteria:**
 
-* On the admin page, restaurant owner should be able to update food menu easily.
+* On the admin page, restaurant owner should be able add,update, and delete the food menu, including special orders.
 
 # Mis-User stories
 
