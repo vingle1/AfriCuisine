@@ -114,7 +114,7 @@ As a **malicious user**, I want to **sniff on network data between customer and 
 ![About Page](/docs/images/mc3.jpg)
 
 #### AfriCuisine/menu page
-![Menu Page](/docs/images/mc4.jpg)
+![Menu Page](/docs/images/mc4-updated.jpg)
 
 #### AfriCuisine/checkout page
 ![Checkout Page](/docs/images/mc5.jpg)
