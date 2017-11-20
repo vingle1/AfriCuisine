@@ -1,26 +1,27 @@
-<div class="container">
-    <div class="menu">
-      {{#link-to 'index'}}
-        <h1>
-          <em>AfriCuisine</em>
-        </h1>
+
+  <div class="container">
+      <div class="menu">
+        {{#link-to 'index'}}
+          <h1>
+            <em>AfriCuisine</em>
+          </h1>
+        {{/link-to}}
+        <div class="links">
+          {{#link-to 'home'}}
+            Home
+          {{/link-to}}
+          {{#link-to 'menu'}}
+            Menu
+          {{/link-to}}
+      {{#link-to 'about'}}
+        About
       {{/link-to}}
-      <div class="links">
-        {{#link-to 'home'}}
-          Home
-        {{/link-to}}
-        {{#link-to 'menu'}}
-          Menu
-        {{/link-to}}
-    {{#link-to 'about'}}
-      About
-    {{/link-to}}
-    {{#link-to 'contact'}}
-      Contact
-    {{/link-to}}
+      {{#link-to 'contact'}}
+        Contact
+      {{/link-to}}
+    </div>
+      </div>
+      <div class="body">
+        {{outlet}}
+      </div>
   </div>
-    </div>
-    <div class="body">
-      {{outlet}}
-    </div>
-</div>
