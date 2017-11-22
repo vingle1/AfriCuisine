@@ -11,8 +11,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
 
-    url(r'^session', csrf_exempt(controllers.Session.as_view())),
-    url(r'^fmenu/$', csrf_exempt(controllers.DogList.as_view())),
-    url(r'^fmenu/(?P<id>[0-9]+)/$', csrf_exempt(controllers.DogDetail.as_view())),
+    url(r'^fmenu/$', csrf_exempt(controllers.MenuList.as_view())),
+    url(r'^fmenu/(?P<id>[0-9]+)/$', csrf_exempt(controllers.MenuDetail.as_view())),
     url(r'^', include(router.urls)),
 ]

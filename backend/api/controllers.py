@@ -40,3 +40,10 @@ from api.pagination import *
 import json, datetime, pytz
 from django.core import serializers
 import requests
+
+class MenuList(APIView):
+#Show all food menu items
+
+
+class MenuDetail(APIView):
+#Show perticular food menu based on the id
