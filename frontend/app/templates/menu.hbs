@@ -11,18 +11,17 @@
        {{/title.media}}
      {{/card.title}}
      {{#card.actions}}
-       {{#paper-button}}Special Request{{/paper-button}}
+       {{#paper-button }}Special Request{{/paper-button}}
+       
 
      {{/card.actions}}
    {{/paper-card}}
  </div>
 
- <div class="layout-column">
-   {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
-     Special Request {{value1}}
-   {{/paper-checkbox}}
+ <div class="layout layout-sm-column">
+   {{paper-input class="flex-20" label="Special Request" value=name onChange=(action (mut name))}}
 
-   </div>
+ </div>
 
 
 
