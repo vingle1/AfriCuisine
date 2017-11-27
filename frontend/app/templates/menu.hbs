@@ -1,0 +1,29 @@
+<div class="layout-column flex-xs flex-gt-xs-30">
+   {{#paper-card as |card|}}
+     {{#card.title as |title|}}
+       {{#title.text as |text|}}
+         {{#text.headline}}Card with Picture (on left side here-->){{/text.headline}}
+         {{#text.subhead}}This is where the food description goes
+         It can be several lines long and it will have usefull information{{/text.subhead}}
+       {{/title.text}}
+       {{#title.media size="md"}}
+         <div class="card-media"></div>
+       {{/title.media}}
+     {{/card.title}}
+     {{#card.actions}}
+       {{#paper-button}}Special Request{{/paper-button}}
+
+     {{/card.actions}}
+   {{/paper-card}}
+ </div>
+
+ <div class="layout-column">
+   {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
+     Special Request {{value1}}
+   {{/paper-checkbox}}
+
+   </div>
+
+
+
+{{outlet}}
