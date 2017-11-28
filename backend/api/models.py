@@ -13,7 +13,8 @@ class Fmenu(models.Model):
     desc = models.TextField()
     price = models.IntegerField()
     calories = models.IntegerField()
-    food_image = models.CharField(255)
+    #add imagefield
+    #food_image = models.CharField(255)
 
     def __str__(self):
         return str(self.name)
