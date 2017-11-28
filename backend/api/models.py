@@ -14,7 +14,7 @@ class Fmenu(models.Model):
     price = models.IntegerField()
     calories = models.IntegerField()
     #add imagefield
-    #food_image = models.CharField(255)
+    #food_image = models.ImageField(upload_to = 'images/')
 
     def __str__(self):
         return str(self.name)
