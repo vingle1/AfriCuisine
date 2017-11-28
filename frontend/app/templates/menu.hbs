@@ -1,3 +1,5 @@
+<h1>MENU</h1>
+
 <div class="layout-column flex-xs flex-gt-xs-30">
    {{#paper-card as |card|}}
      {{#card.title as |title|}}
@@ -11,16 +13,21 @@
        {{/title.media}}
      {{/card.title}}
      {{#card.actions}}
-       {{#paper-button }}Special Request{{/paper-button}}
-       
+
+     <div class="layout, flex-100">
+
+     {{paper-input textarea=true block=true label="Special Request" maxlength=100 passThru=(hash rows=1 maxRows=3)
+       value=special onChange=(action (mut special))}}
+     </div>
+
+           <div class="layout-column, layout-align-end">
+            {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
+                Add to cart: {{value1}}
+            {{/paper-checkbox}}
+          </div>
 
      {{/card.actions}}
    {{/paper-card}}
- </div>
-
- <div class="layout layout-sm-column">
-   {{paper-input class="flex-20" label="Special Request" value=name onChange=(action (mut name))}}
-
  </div>
 
 

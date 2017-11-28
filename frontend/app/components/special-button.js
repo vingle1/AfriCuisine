@@ -1,6 +1,6 @@
 /*import Component from '@ember/component';
 
-const { Component } = Ember;
+const { special-button.js } = Ember;
 
 export default Component.extend({
   actions: {
@@ -8,7 +8,7 @@ export default Component.extend({
       alert('Your special request is...');
     }
   }
-});*/
+});
 
 import Ember from 'ember';
 
@@ -20,4 +20,4 @@ export default Component.extend({
       alert('You pressed a target button. -from component');
     }
   }
-});
+});*/
