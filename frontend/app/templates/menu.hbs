@@ -13,22 +13,30 @@
        {{/title.media}}
      {{/card.title}}
      {{#card.actions}}
-
-     <div class="layout, flex-100">
-
-     {{paper-input textarea=true block=true label="Special Request" maxlength=100 passThru=(hash rows=1 maxRows=3)
-       value=special onChange=(action (mut special))}}
-     </div>
-
-           <div class="layout-column, layout-align-end">
-            {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
-                Add to cart: {{value1}}
-            {{/paper-checkbox}}
-          </div>
-
      {{/card.actions}}
+{{#paper-list}}
+
+       <h3> Special Requests</h3>
+        <p>
+          <div class="layout-align-end, flex-100">
+
+          {{paper-input textarea=true block=true label="Special Request" maxlength=100 passThru=(hash rows=1 maxRows=3)
+            value=special onChange=(action (mut special))}}
+          </div>
+        </p>
+
+      <p>
+       <div class="layout-column, layout-align-start">
+              {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
+                  Add to cart: {{value1}}
+              {{/paper-checkbox}}
+       </div>
+     </p>
+{{/paper-list}}
+
    {{/paper-card}}
  </div>
+
 
 
 
