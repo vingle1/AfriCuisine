@@ -1,2 +1,34 @@
+{{#paper-toolbar}}
 
-{{outlet}}
+  <div class="menu">
+       {{#link-to 'index'}}
+            <h1>
+              <em>AfriCuisine</em>
+            </h1>
+        {{/link-to}}
+          <div class="links">
+            {{#link-to 'home'}}{{paper-icon 'home'}}
+              Home
+            {{/link-to}}
+            {{#link-to 'menu'}}{{paper-icon 'menu'}}
+              Menu
+            {{/link-to}}
+           {{#link-to 'about'}}
+          About
+        {{/link-to}}
+        {{#link-to 'contact'}}{{paper-icon 'contacts'}}
+          Contact
+        {{/link-to}}
+        {{#link-to 'login'}}{{paper-icon 'logins'}}
+          Login
+        {{/link-to}}
+      </div>
+    </div>
+    <div class="body">
+          {{outlet}}
+  </div>
+    <footer>
+  	    <p>©AfriCuisine 2017</p>
+  	</footer>
+
+{{/paper-toolbar}}
