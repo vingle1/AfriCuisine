@@ -4,22 +4,18 @@
    {{#paper-card as |card|}}
      {{#card.title as |title|}}
        {{#title.text as |text|}}
-         {{#text.headline}}Card with Picture (on left side here-->){{/text.headline}}
-         {{#text.subhead}}This is where the food description goes
-         It can be several lines long and it will have usefull information{{/text.subhead}}
+         {{#text.headline}}Name of food{{/text.headline}}
+         {{#text.subhead}}Description {{/text.subhead}}
+         {{#text.subhead}}Price{{/text.subhead}}
+         {{#text.subhead}}Calories{{/text.subhead}}
        {{/title.text}}
-       {{#title.media size="md"}}
-         <div class="card-media"></div>
-       {{/title.media}}
      {{/card.title}}
-     {{#card.actions}}
-     {{/card.actions}}
+
 {{#paper-list}}
 
        <h3> Special Requests</h3>
         <p>
           <div class="layout-align-end, flex-100">
-
           {{paper-input textarea=true block=true label="Special Request" maxlength=100 passThru=(hash rows=1 maxRows=3)
             value=special onChange=(action (mut special))}}
           </div>
@@ -27,17 +23,14 @@
 
       <p>
        <div class="layout-column, layout-align-start">
+
+
               {{#paper-checkbox value=value1 onChange=(action (mut value1))}}
                   Add to cart: {{value1}}
               {{/paper-checkbox}}
        </div>
      </p>
 {{/paper-list}}
-
    {{/paper-card}}
  </div>
-
-
-
-
 {{outlet}}

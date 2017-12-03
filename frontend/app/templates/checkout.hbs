@@ -1,34 +1,7 @@
-{{#paper-sidenav-container class="inner-sidenav"}}
+<p>
+{{#link-to "index"}}<h2>Back to MENU</h2>{{/link-to}}
+</p>
 
-  {{#paper-sidenav
-    class="md-whiteframe-z2"
-    name="left2"
-    open=leftSideBarOpen2
-    lockedOpen=leftSideBarLockedOpen
-    onToggle=(action (mut leftSideBarOpen2))}}
-    {{#paper-toolbar as |toolbar|}}
-      {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-    {{#paper-content padding=true}}
-      Çup?
-    {{/paper-content}}
-  {{/paper-sidenav}}
-
-  {{#paper-card-content class="flex"}}
-    <div class="layout-fill layout-align-start-center layout-column" style="height: 500px">
-      <p>
-        Another way of using the sidenav is to toggle the <code>lockedOpen</code> state.
-        This corresponds to the "persistent sidenav" pattern in the material spec.
-      </p>
-      <p>
-        Left sidenav is <strong>{{if leftSideBarLockedOpen "locked" "unlocked"}}</strong>.
-      </p>
-
-      {{#paper-button raised=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
-        {{if leftSideBarLockedOpen "Unlock" "Lock"}} left sidenav
-      {{/paper-button}}
-
-    </div>
-  {{/paper-card-content}}
-
-{{/paper-sidenav-container}}
+<nav>
+  {{#link-to "index"}}<h2>Back to MENU</h2>{{/link-to}}
+</nav>
