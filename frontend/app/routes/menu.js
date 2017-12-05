@@ -1,8 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model(){
-
-    return this.store.findAll('menu');
+  model() {
+    return ['Plaintains', 'Fried Tilapia', 'Chicken beans', 'Fufu', 'Jollof rice'];
   }
 });
