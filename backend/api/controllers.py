@@ -21,7 +21,8 @@ from django.contrib.auth.models import *
 from api.models import *
 
 #REST API
-from rest_framework import viewsets, filters, parsers, renderers
+from rest_framework import viewsets, filters
+from rest_framework_json_api import parsers, renderers
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -33,6 +34,8 @@ from rest_framework.permissions import *
 from rest_framework.decorators import *
 from rest_framework.authentication import *
 
+from serializers import *
+
 #filters
 #from filters.mixins import *
 
@@ -41,18 +44,22 @@ import json, datetime, pytz
 from django.core import serializers
 import requests
 
+def home(request):
+    return render_to_response('ember/index.html')
+
 class MenuDetail(APIView):
     #Show perticular food menu based on the id
     permission_classes = (AllowAny,)
-    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    parser_classes = (parsers.JSONParser,)
     renderer_classes = (renderers.JSONRenderer, )
 
-    #get a single food item detail by an id
-    def get(self, request, id=None, format=None):
-        fmenus = Fmenu.objects.get(pk=id)
-        json_data = serializers.serialize('json',[fmenus])
-        content = {'fmenus':json_data}
-        return HttpResponse(json_data, content_type='json')
+
+    # #get a single food item detail by an id
+    # def get(self, request, id=None, format=None):
+    #     fmenus = Fmenu.objects.get(pk=id)
+    #     json_data = serializers.serialize('json',[fmenus])
+    #     content = {'fmenus':json_data}
+    #     return HttpResponse(json_data, content_type='json')
 
     #delete a food item details
     def delete(self, request, id):
@@ -77,41 +84,43 @@ class MenuDetail(APIView):
         return Response({'success': True}, status=status.HTTP_200_OK)
 
 
-class MenuList(APIView):
+class FmenuViewSet(viewsets.ModelViewSet):
     #Show all food menu items
     permission_classes = (AllowAny,)
-    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    parser_classes = (parsers.JSONParser,)
     renderer_classes = (renderers.JSONRenderer, )
+    serializer_class = FmenuSerializer
+    queryset = Fmenu.objects.all()
 
-    #get list of all food items
-    def get(self, request, format=None):
-        fmenus = Fmenu.objects.all()
-        json_data = serializers.serialize('json', fmenus)
-        content = {'fmenus': json_data}
-        return HttpResponse(json_data, content_type='json')
+    # #get list of all food items
+    # def get(self, request, format=None):
+    #     fmenus = Fmenu.objects.all()
+    #     json_data = serializers.serialize('json', fmenus)
+    #     content = {'fmenus': json_data}
+    #     return Response(json_data, content_type='json')
 
-    #create new food menu
-    def post(self, request, *args, **kwargs):
-        print 'REQUEST DATA'
-        print str(request.data)
-
-        name = request.data.get('name')
-        desc = request.data.get('desc')
-        price = int(request.data.get('price'))
-        calories = int(request.data.get('calories'))
-
-        makeFmenu = Fmenu(
-            name=name,
-            desc=desc,
-            price=price,
-            calories=calories
-        )
-
-        try:
-            makeFmenu.clean_fields()
-        except ValidationError as e:
-            print e
-            return Response({'success':False, 'error':e}, status=status.HTTP_400_BAD_REQUEST)
-
-        makeFmenu.save()
-        return Response({'success': True}, status=status.HTTP_200_OK)
+    # #create new food menu
+    # def post(self, request, *args, **kwargs):
+    #     print 'REQUEST DATA'
+    #     print str(request.data)
+    #
+    #     name = request.data.get('name')
+    #     desc = request.data.get('desc')
+    #     price = int(request.data.get('price'))
+    #     calories = int(request.data.get('calories'))
+    #
+    #     makeFmenu = Fmenu(
+    #         name=name,
+    #         desc=desc,
+    #         price=price,
+    #         calories=calories
+    #     )
+    #
+    #     try:
+    #         makeFmenu.clean_fields()
+    #     except ValidationError as e:
+    #         print e
+    #         return Response({'success':False, 'error':e}, status=status.HTTP_400_BAD_REQUEST)
+    #
+    #     makeFmenu.save()
+    #     return Response({'success': True}, status=status.HTTP_200_OK)

@@ -19,3 +19,4 @@ RUN pip install psycopg2
 RUN pip install requests
 RUN pip install bleach
 RUN pip install Pillow
+RUN pip install djangorestframework-jsonapi

@@ -1,1 +1,5 @@
-{{fmenu-list title="List of Food Menu Items" fmenu=model}}
+<!-- {{fmenu-list title="List of Food Menu Items" fmenu=model}} -->
+
+{{#each model as |m|}}
+{{m.desc}}
+{{/each}}
