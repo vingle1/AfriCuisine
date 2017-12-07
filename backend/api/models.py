@@ -12,6 +12,7 @@ class Fmenu(models.Model):
     name = models.CharField(max_length=1000)
     desc = models.TextField()
     price = models.IntegerField()
+    image = models.TextField(blank=True, null=True)
     calories = models.IntegerField()
     #add imagefield
     #food_image = models.ImageField(upload_to = 'images/')

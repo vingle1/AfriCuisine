@@ -4,6 +4,7 @@ import config from './config/environment';
 const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.baseURL
+  //rootURL: config.rootURL
 });
 
 Router.map(function() {

@@ -4,5 +4,6 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   desc: DS.attr('string'),
 	price: DS.attr('number'),
-  calories: DS.attr('number'),
+  image: DS.attr('string'),
+  calories: DS.attr('number')
 });

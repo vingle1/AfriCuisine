@@ -1,9 +1,10 @@
 import Component from '@ember/component';
 
 export default Component.extend({
+  isWide:false,
   actions: {
-    showFood_item(food_item) {
-      alert("Added to Cart - " + food_item);
-    }
-  }
+   toggleImageSize() {
+     this.toggleProperty('isWide');
+   }
+ }
 });

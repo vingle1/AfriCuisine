@@ -1,7 +1,20 @@
-<h2>{{title}}</h2>
+<!-- {{#each model as |m|}}
+{{m.desc}}
+{{/each}}  -->
 
-<ul>
-  {{#each fmenu as |food_item|}}
-    <li {{action "showFood_item" food_item}}> {{food_item}}</li>
-  {{/each}}
-</ul>
+  <article class="listing">
+  <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}">
+    <img src="{{fmenu.image}}" alt="">
+    <small>View Larger</small>
+  </a>
+    <h3>{{fmenu.name}}</h3>
+    <div class="detail desc">
+      <span>Description:</span> {{fmenu.desc}}
+    </div>
+    <div class="detail price">
+      <span>Price:$</span> {{fmenu.price}}
+    </div>
+    <div class="detail calories">
+      <span> Calories:</span> {{fmenu.calories}}
+    </div>
+  </article>

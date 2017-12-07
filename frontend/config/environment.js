@@ -5,6 +5,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'frontend',
     environment,
+    //rootURL: '/',
     rootURL: '/static/ember/',
     baseURL: '/',
     locationType: 'auto',

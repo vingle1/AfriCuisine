@@ -73,6 +73,7 @@ class MenuDetail(APIView):
         fmenus.name = request.data.get('name')
         fmenus.desc = request.data.get('desc')
         fmenus.price = int(request.data.get('price'))
+        fmenu.image = request.data.get('image')
         fmenus.calories = int(request.data.get('calories'))
 
         try:

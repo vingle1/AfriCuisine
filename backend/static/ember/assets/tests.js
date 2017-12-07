@@ -35,11 +35,6 @@ define('frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'adapters/application.js should pass ESLint\n\n');
   });
 
-  QUnit.test('adapters/menu.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'adapters/menu.js should pass ESLint\n\n');
-  });
-
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app.js should pass ESLint\n\n');
@@ -58,11 +53,6 @@ define('frontend/tests/app.lint-test', [], function () {
   QUnit.test('models/fmenu.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/fmenu.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('models/menu.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'models/menu.js should pass ESLint\n\n');
   });
 
   QUnit.test('resolver.js', function (assert) {

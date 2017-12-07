@@ -13,18 +13,6 @@ define('frontend/adapters/application', ['exports', 'ember-data'], function (exp
 
   });
 });
-define('frontend/adapters/menu', ['exports', 'ember-data'], function (exports, _emberData) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = _emberData.default.JSONAPIAdapter.extend({
-
-    namespace: 'Api'
-
-  });
-});
 define('frontend/app', ['exports', 'frontend/resolver', 'ember-load-initializers', 'frontend/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
 
@@ -161,17 +149,18 @@ define('frontend/components/ember-wormhole', ['exports', 'ember-wormhole/compone
     }
   });
 });
-define("frontend/components/fmenu-list", ["exports"], function (exports) {
-  "use strict";
+define('frontend/components/fmenu-list', ['exports'], function (exports) {
+  'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   var Component = Ember.Component;
   exports.default = Component.extend({
+    isWide: false,
     actions: {
-      showFood_item: function showFood_item(food_item) {
-        alert("Added to Cart - " + food_item);
+      toggleImageSize: function toggleImageSize() {
+        this.toggleProperty('isWide');
       }
     }
   });
@@ -2026,7 +2015,7 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Config (with defaults).
-       Note: these only affect routes defined *after* them!
+        Note: these only affect routes defined *after* them!
     */
 
     // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
@@ -2035,12 +2024,12 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Shorthand cheatsheet:
-       this.get('/posts');
+        this.get('/posts');
       this.post('/posts');
       this.get('/posts/:id');
       this.put('/posts/:id'); // or this.patch
       this.del('/posts/:id');
-       http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
+        http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
     */
   };
 });
@@ -2092,18 +2081,6 @@ define('frontend/models/fmenu', ['exports', 'ember-data'], function (exports, _e
     name: _emberData.default.attr('string'),
     desc: _emberData.default.attr('string'),
     price: _emberData.default.attr('number'),
-    calories: _emberData.default.attr('number')
-  });
-});
-define('frontend/models/menu', ['exports', 'ember-data'], function (exports, _emberData) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = _emberData.default.Model.extend({
-    name: _emberData.default.attr('string'),
-    price: _emberData.default.attr('number'),
     image: _emberData.default.attr('string'),
     calories: _emberData.default.attr('number')
   });
@@ -2128,6 +2105,7 @@ define('frontend/router', ['exports', 'frontend/config/environment'], function (
   var Router = EmberRouter.extend({
     location: _environment.default.locationType,
     rootURL: _environment.default.baseURL
+    //rootURL: config.rootURL
   });
 
   Router.map(function () {
@@ -2208,7 +2186,6 @@ define('frontend/routes/menu', ['exports'], function (exports) {
   var Route = Ember.Route;
   exports.default = Route.extend({
     model: function model() {
-      // return ['Plaintains', 'Fried Tilapia', 'Chicken beans', 'Fufu', 'Jollof rice'];
       return this.store.findAll('fmenu');
     }
   });
@@ -2594,7 +2571,7 @@ define("frontend/templates/components/fmenu-list", ["exports"], function (export
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "mJ+ZHsVp", "block": "{\"symbols\":[\"food_item\"],\"statements\":[[6,\"h2\"],[7],[1,[18,\"title\"],false],[8],[0,\"\\n\\n\"],[6,\"ul\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"fmenu\"]]],null,{\"statements\":[[0,\"    \"],[6,\"li\"],[3,\"action\",[[19,0,[]],\"showFood_item\",[19,1,[]]]],[7],[0,\" \"],[1,[19,1,[]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/components/fmenu-list.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "vkNRYP7Q", "block": "{\"symbols\":[],\"statements\":[[2,\" {{#each model as |m|}}\\n{{m.desc}}\\n{{/each}}  \"],[0,\"\\n\\n  \"],[6,\"article\"],[9,\"class\",\"listing\"],[7],[0,\"\\n  \"],[6,\"a\"],[10,\"class\",[26,[\"image \",[25,\"if\",[[20,[\"isWide\"]],\"wide\"],null]]]],[3,\"action\",[[19,0,[]],\"toggleImageSize\"]],[7],[0,\"\\n    \"],[6,\"img\"],[10,\"src\",[26,[[20,[\"fmenu\",\"image\"]]]]],[9,\"alt\",\"\"],[7],[8],[0,\"\\n    \"],[6,\"small\"],[7],[0,\"View Larger\"],[8],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"h3\"],[7],[1,[20,[\"fmenu\",\"name\"]],false],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail desc\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Description:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"desc\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail price\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"price\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail calories\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\" Calories:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"calories\"]],false],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/components/fmenu-list.hbs" } });
 });
 define("frontend/templates/components/transition-group", ["exports"], function (exports) {
   "use strict";
@@ -2642,7 +2619,7 @@ define("frontend/templates/menu", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Ib2HJTC5", "block": "{\"symbols\":[\"m\"],\"statements\":[[2,\" {{fmenu-list title=\\\"List of Food Menu Items\\\" fmenu=model}} \"],[0,\"\\n\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[1,[19,1,[\"desc\"]],false],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/menu.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "aQ9SkwHf", "block": "{\"symbols\":[\"m\"],\"statements\":[[2,\" {{#each model as |m|}}\\n{{m.desc}}\\n{{/each}}  \"],[0,\"\\n\\n\"],[4,\"each\",[[20,[\"model\"]]],null,{\"statements\":[[1,[25,\"fmenu-list\",null,[[\"fmenu\"],[[19,1,[]]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/menu.hbs" } });
 });
 define('frontend/tests/mirage/mirage.lint-test', [], function () {
   'use strict';
@@ -2699,6 +2676,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+d68fb58a"});
+  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+f0a914f1"});
 }
 //# sourceMappingURL=frontend.map
