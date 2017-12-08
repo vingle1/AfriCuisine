@@ -5,6 +5,9 @@ export default Component.extend({
   actions: {
    toggleImageSize() {
      this.toggleProperty('isWide');
+   },
+   additem(item) {
+     this.get('cart.items').addObject(item);
    }
  }
 });

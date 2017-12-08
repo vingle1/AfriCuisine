@@ -161,6 +161,9 @@ define('frontend/components/fmenu-list', ['exports'], function (exports) {
     actions: {
       toggleImageSize: function toggleImageSize() {
         this.toggleProperty('isWide');
+      },
+      additem: function additem(item) {
+        this.get('cart.items').addObject(item);
       }
     }
   });
@@ -1805,6 +1808,22 @@ define('frontend/initializers/app-version', ['exports', 'ember-cli-app-version/i
     initialize: (0, _initializerFactory.default)(name, version)
   };
 });
+define('frontend/initializers/cart', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.initialize = initialize;
+  function initialize(application) {
+    application.inject('controller', 'cart', 'service:cart');
+    application.inject('component', 'cart', 'service:cart');
+  }
+
+  exports.default = {
+    initialize: initialize
+  };
+});
 define('frontend/initializers/container-debug-adapter', ['exports', 'ember-resolver/resolvers/classic/container-debug-adapter'], function (exports, _containerDebugAdapter) {
   'use strict';
 
@@ -2015,7 +2034,7 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Config (with defaults).
-        Note: these only affect routes defined *after* them!
+       Note: these only affect routes defined *after* them!
     */
 
     // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
@@ -2024,12 +2043,12 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Shorthand cheatsheet:
-        this.get('/posts');
+       this.get('/posts');
       this.post('/posts');
       this.get('/posts/:id');
       this.put('/posts/:id'); // or this.patch
       this.del('/posts/:id');
-        http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
+       http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
     */
   };
 });
@@ -2201,6 +2220,18 @@ define('frontend/services/ajax', ['exports', 'ember-ajax/services/ajax'], functi
     get: function () {
       return _ajax.default;
     }
+  });
+});
+define('frontend/services/cart', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var Service = Ember.Service;
+  exports.default = Service.extend({
+    items: Ember.ArrayProxy.create({ content: Ember.A(['test1', 'test2', 'test3']) })
+
   });
 });
 define('frontend/services/constants', ['exports'], function (exports) {
@@ -2571,7 +2602,7 @@ define("frontend/templates/components/fmenu-list", ["exports"], function (export
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "vkNRYP7Q", "block": "{\"symbols\":[],\"statements\":[[2,\" {{#each model as |m|}}\\n{{m.desc}}\\n{{/each}}  \"],[0,\"\\n\\n  \"],[6,\"article\"],[9,\"class\",\"listing\"],[7],[0,\"\\n  \"],[6,\"a\"],[10,\"class\",[26,[\"image \",[25,\"if\",[[20,[\"isWide\"]],\"wide\"],null]]]],[3,\"action\",[[19,0,[]],\"toggleImageSize\"]],[7],[0,\"\\n    \"],[6,\"img\"],[10,\"src\",[26,[[20,[\"fmenu\",\"image\"]]]]],[9,\"alt\",\"\"],[7],[8],[0,\"\\n    \"],[6,\"small\"],[7],[0,\"View Larger\"],[8],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"h3\"],[7],[1,[20,[\"fmenu\",\"name\"]],false],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail desc\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Description:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"desc\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail price\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"price\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail calories\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\" Calories:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"calories\"]],false],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/components/fmenu-list.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "H2Fy/8k8", "block": "{\"symbols\":[\"item\"],\"statements\":[[2,\" {{#each model as |m|}}\\n{{m.desc}}\\n{{/each}}  \"],[0,\"\\n\\n  \"],[6,\"article\"],[9,\"class\",\"listing\"],[7],[0,\"\\n  \"],[6,\"a\"],[10,\"class\",[26,[\"image \",[25,\"if\",[[20,[\"isWide\"]],\"wide\"],null]]]],[3,\"action\",[[19,0,[]],\"toggleImageSize\"]],[7],[0,\"\\n    \"],[6,\"img\"],[10,\"src\",[26,[[20,[\"fmenu\",\"image\"]]]]],[9,\"alt\",\"\"],[7],[8],[0,\"\\n    \"],[6,\"small\"],[7],[0,\"View Larger\"],[8],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"h3\"],[7],[1,[20,[\"fmenu\",\"name\"]],false],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail desc\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Description:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"desc\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail price\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"price\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"detail calories\"],[7],[0,\"\\n      \"],[6,\"span\"],[7],[0,\" Calories:\"],[8],[0,\" \"],[1,[20,[\"fmenu\",\"calories\"]],false],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"additem\",[20,[\"fmenu\"]]]],[7],[0,\"add item button\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[0,\"  \"],[1,[19,1,[]],false],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/components/fmenu-list.hbs" } });
 });
 define("frontend/templates/components/transition-group", ["exports"], function (exports) {
   "use strict";
@@ -2676,6 +2707,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+f0a914f1"});
+  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+eb5519cf"});
 }
 //# sourceMappingURL=frontend.map

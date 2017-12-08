@@ -50,6 +50,11 @@ define('frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/menu.js should pass ESLint\n\n');
   });
 
+  QUnit.test('initializers/cart.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'initializers/cart.js should pass ESLint\n\n');
+  });
+
   QUnit.test('models/fmenu.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/fmenu.js should pass ESLint\n\n');
@@ -98,6 +103,11 @@ define('frontend/tests/app.lint-test', [], function () {
   QUnit.test('routes/menu.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/menu.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('services/cart.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'services/cart.js should pass ESLint\n\n4:10 - \'Ember\' is not defined. (no-undef)\n4:45 - \'Ember\' is not defined. (no-undef)');
   });
 });
 define('frontend/tests/helpers/destroy-app', ['exports'], function (exports) {
@@ -349,6 +359,11 @@ define('frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/controllers/menu-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/initializers/cart-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/initializers/cart-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/models/fmenu-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/fmenu-test.js should pass ESLint\n\n');
@@ -393,6 +408,11 @@ define('frontend/tests/tests.lint-test', [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/routes/menu-test.js should pass ESLint\n\n');
   });
+
+  QUnit.test('unit/services/cart-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/services/cart-test.js should pass ESLint\n\n');
+  });
 });
 define('frontend/tests/unit/adapters/application-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
@@ -434,6 +454,35 @@ define('frontend/tests/unit/controllers/menu-test', ['ember-qunit'], function (_
   (0, _emberQunit.test)('it exists', function (assert) {
     var controller = this.subject();
     assert.ok(controller);
+  });
+});
+define('frontend/tests/unit/initializers/cart-test', ['frontend/initializers/cart', 'qunit', 'frontend/tests/helpers/destroy-app'], function (_cart, _qunit, _destroyApp) {
+  'use strict';
+
+  var Application = Ember.Application;
+  var run = Ember.run;
+
+
+  (0, _qunit.module)('Unit | Initializer | cart', {
+    beforeEach: function beforeEach() {
+      var _this = this;
+
+      run(function () {
+        _this.application = Application.create();
+        _this.application.deferReadiness();
+      });
+    },
+    afterEach: function afterEach() {
+      (0, _destroyApp.default)(this.application);
+    }
+  });
+
+  // Replace this with your real tests.
+  (0, _qunit.test)('it works', function (assert) {
+    (0, _cart.initialize)(this.application);
+
+    // you would normally confirm the results of the initializer here
+    assert.ok(true);
   });
 });
 define('frontend/tests/unit/models/fmenu-test', ['ember-qunit'], function (_emberQunit) {
@@ -553,6 +602,20 @@ define('frontend/tests/unit/routes/menu-test', ['ember-qunit'], function (_ember
   (0, _emberQunit.test)('it exists', function (assert) {
     var route = this.subject();
     assert.ok(route);
+  });
+});
+define('frontend/tests/unit/services/cart-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('service:cart', 'Unit | Service | cart', {
+    // Specify the other units that are required for this test.
+    // needs: ['service:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var service = this.subject();
+    assert.ok(service);
   });
 });
 require('frontend/tests/test-helper');
