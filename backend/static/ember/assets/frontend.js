@@ -1300,6 +1300,19 @@ define('frontend/components/power-select/trigger', ['exports', 'ember-power-sele
     }
   });
 });
+define('frontend/components/slick-slider', ['exports', 'ember-cli-slick/components/slick-slider'], function (exports, _slickSlider) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _slickSlider.default;
+    }
+  });
+});
 define('frontend/components/transition-group', ['exports', 'ember-css-transitions/components/transition-group'], function (exports, _transitionGroup) {
   'use strict';
 
@@ -1824,6 +1837,22 @@ define('frontend/initializers/cart', ['exports'], function (exports) {
     initialize: initialize
   };
 });
+define('frontend/initializers/constants', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.initialize = initialize;
+  function initialize(application) {
+    application.inject('controller', 'constants', 'service:constants');
+  }
+
+  exports.default = {
+    name: 'constants',
+    initialize: initialize
+  };
+});
 define('frontend/initializers/container-debug-adapter', ['exports', 'ember-resolver/resolvers/classic/container-debug-adapter'], function (exports, _containerDebugAdapter) {
   'use strict';
 
@@ -2034,7 +2063,7 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Config (with defaults).
-       Note: these only affect routes defined *after* them!
+        Note: these only affect routes defined *after* them!
     */
 
     // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
@@ -2043,12 +2072,12 @@ define("frontend/mirage/config", ["exports"], function (exports) {
 
     /*
       Shorthand cheatsheet:
-       this.get('/posts');
+        this.get('/posts');
       this.post('/posts');
       this.get('/posts/:id');
       this.put('/posts/:id'); // or this.patch
       this.del('/posts/:id');
-       http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
+        http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
     */
   };
 });
@@ -2230,7 +2259,7 @@ define('frontend/services/cart', ['exports'], function (exports) {
   });
   var Service = Ember.Service;
   exports.default = Service.extend({
-    items: Ember.ArrayProxy.create({ content: Ember.A(['test1', 'test2', 'test3']) })
+    items: Ember.ArrayProxy.create({ content: Ember.A(['test1', 'test2']) })
 
   });
 });
@@ -2626,7 +2655,7 @@ define("frontend/templates/home", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "9pM6pLzX", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo offers-slideshow\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n\\n  \"],[6,\"h1\"],[7],[0,\"Welcome to AfriCuisine!\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"We are the home of authentic African food in Omaha. We are delighted to serve you with a selection of menu that you will not forget.\\n    Please take our quick servey to let us know how we are doing.\"],[8],[0,\"\\n\"],[4,\"link-to\",[\"about\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"    About Us\\n\"]],\"parameters\":[]},null],[8],[0,\"\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/home.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "/BzqMdx8", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo\"],[9,\"align\",\"center\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n\\n  \"],[6,\"h1\"],[7],[0,\"Welcome to AfriCuisine!\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"We are the home of authentic African food in Omaha. We are delighted to serve you with a selection of menu that you will not forget.\"],[8],[0,\"\\n\"],[4,\"link-to\",[\"about\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"    About Us\\n\"]],\"parameters\":[]},null],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"jumbo\"],[9,\"align\",\"center\"],[7],[0,\"\\n\"],[6,\"p\"],[7],[0,\"Below you can see some of our famous dishes.\"],[8],[0,\"\\n\"],[4,\"slick-slider\",null,[[\"autoplay\",\"arrows\",\"adaptiveHeight\",\"fade\"],[true,true,true,true]],{\"statements\":[[6,\"div\"],[9,\"class\",\"box\"],[7],[0,\" \"],[6,\"img\"],[9,\"src\",\"https://www.onlinenigeria.com/sites/thumbnail.php?file=images/Oatmeal_118619703.jpg&size=article_large\"],[9,\"width\",\"500\"],[9,\"height\",\"500\"],[9,\"title\",\"Fufu\"],[7],[8],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"box\"],[7],[0,\" \"],[6,\"img\"],[9,\"src\",\"http://www.saltmagazine.org/wp-content/uploads/2014/10/Recipe-fish.jpg\"],[9,\"width\",\"500\"],[9,\"height\",\"500\"],[9,\"title\",\"Fried Fish\"],[7],[8],[0,\" \"],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"box\"],[7],[0,\" \"],[6,\"img\"],[9,\"src\",\"https://i.pinimg.com/736x/bf/44/55/bf44550ed8abec0309ee188c20a6c2b8--punch-recipes-top-recipes.jpg\"],[9,\"width\",\"500\"],[9,\"height\",\"1000\"],[9,\"title\",\"Chicken with beans\"],[7],[8],[0,\" \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[8],[0,\"\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/home.hbs" } });
 });
 define("frontend/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -2707,6 +2736,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+eb5519cf"});
+  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+21993ab9"});
 }
 //# sourceMappingURL=frontend.map

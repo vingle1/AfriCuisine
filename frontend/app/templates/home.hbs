@@ -1,11 +1,18 @@
-<div class="jumbo offers-slideshow">
+<div class="jumbo" align=center>
   <div class=""></div>
 
   <h1>Welcome to AfriCuisine!</h1>
-  <p>We are the home of authentic African food in Omaha. We are delighted to serve you with a selection of menu that you will not forget.
-    Please take our quick servey to let us know how we are doing.</p>
+  <p>We are the home of authentic African food in Omaha. We are delighted to serve you with a selection of menu that you will not forget.</p>
   {{#link-to 'about' class="button"}}
     About Us
   {{/link-to}}
+</div>
+<div class="jumbo" align=center>
+<p>Below you can see some of our famous dishes.</p>
+{{#slick-slider autoplay=true arrows=true adaptiveHeight=true fade=true }}
+<div class="box"> <img src="https://www.onlinenigeria.com/sites/thumbnail.php?file=images/Oatmeal_118619703.jpg&size=article_large" width="500" height="500" title="Fufu"></div>
+<div class="box"> <img src="http://www.saltmagazine.org/wp-content/uploads/2014/10/Recipe-fish.jpg" width="500" height="500" title="Fried Fish" > </div>
+<div class="box"> <img src="https://i.pinimg.com/736x/bf/44/55/bf44550ed8abec0309ee188c20a6c2b8--punch-recipes-top-recipes.jpg" width="500" height="1000" title="Chicken with beans" > </div>
+{{/slick-slider}}
 </div>
 {{outlet}}

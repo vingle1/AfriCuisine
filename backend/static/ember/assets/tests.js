@@ -55,6 +55,11 @@ define('frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'initializers/cart.js should pass ESLint\n\n');
   });
 
+  QUnit.test('initializers/constants.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'initializers/constants.js should pass ESLint\n\n');
+  });
+
   QUnit.test('models/fmenu.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/fmenu.js should pass ESLint\n\n');
@@ -107,7 +112,7 @@ define('frontend/tests/app.lint-test', [], function () {
 
   QUnit.test('services/cart.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'services/cart.js should pass ESLint\n\n4:10 - \'Ember\' is not defined. (no-undef)\n4:45 - \'Ember\' is not defined. (no-undef)');
+    assert.ok(true, 'services/cart.js should pass ESLint\n\n');
   });
 });
 define('frontend/tests/helpers/destroy-app', ['exports'], function (exports) {
