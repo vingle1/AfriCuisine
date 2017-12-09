@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  Name of food: DS.attr('string'),
-  Description: DS.attr('number'),
-  Price: DS.attr('string'),
+  Nameoffood: DS.attr('string'),
+  Description: DS.attr('string'),
+  Price: DS.attr('number'),
   Calories: DS.attr('number')
 });
