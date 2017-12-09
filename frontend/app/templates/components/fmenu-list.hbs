@@ -2,7 +2,7 @@
 {{m.desc}}
 {{/each}}  -->
 
-  <article class="listing">
+<article class="listing">
   <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}">
     <img src="{{fmenu.image}}" alt="">
     <small>View Larger</small>
@@ -17,4 +17,10 @@
     <div class="detail calories">
       <span> Calories:</span> {{fmenu.calories}}
     </div>
-  </article>
+
+  <button {{action 'additem' fmenu}}>add item button</button>
+</article>
+
+{{#each cart.items as |item|}}
+  {{item}}
+{{/each}}
