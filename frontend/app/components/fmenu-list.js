@@ -8,6 +8,7 @@ export default Component.extend({
    },
    additem(item) {
      this.get('cart.items').addObject(item);
+     alert("Item added to cart");
    }
  }
 });

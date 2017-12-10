@@ -1,1 +1,10 @@
-{{outlet}}
+<div class="cart">
+{{#each cart.items as |item|}}
+<div class="cart-item">
+  <div class="details">
+  {{item.name}}
+  {{item.price}}
+  </div>
+</div>
+{{/each}}
+</div>

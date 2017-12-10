@@ -17,9 +17,5 @@
     <div class="detail calories">
       <span> Calories:</span> {{fmenu.calories}}
     </div>
-    <button {{action 'additem' fmenu}}>add item button</button>
+    <button {{action 'additem' fmenu}}>Add to Cart</button>
   </article>
-
-{{#each cart.items as |item|}}
-  {{item}}
-{{/each}}
