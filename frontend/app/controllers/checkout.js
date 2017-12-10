@@ -5,6 +5,9 @@ export default Controller.extend({
    removeItem(item) {
      this.get('cart.items').removeObject(item);
      alert("Item deleted from cart");
-   }
+   },
+   clear(){
+      this.get('cart').clear()
+    }
  }
 });

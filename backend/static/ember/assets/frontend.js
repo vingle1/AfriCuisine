@@ -1365,6 +1365,9 @@ define('frontend/controllers/checkout', ['exports'], function (exports) {
       removeItem: function removeItem(item) {
         this.get('cart.items').removeObject(item);
         alert("Item deleted from cart");
+      },
+      clear: function clear() {
+        this.get('cart').clear();
       }
     }
   });
@@ -2279,8 +2282,11 @@ define('frontend/services/cart', ['exports'], function (exports) {
     items: Ember.ArrayProxy.create({ content: Ember.A([]) }),
 
     monsterPrices: Ember.computed.mapBy('items', 'price'),
-    total: Ember.computed.sum('monsterPrices')
+    total: Ember.computed.sum('monsterPrices'),
 
+    clear: function clear() {
+      this.get('items').clear();
+    }
   });
 });
 define('frontend/services/constants', ['exports'], function (exports) {
@@ -2643,7 +2649,7 @@ define("frontend/templates/checkout", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "2IfapQiW", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Name:\"],[8],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"removeItem\",[19,1,[]]]],[7],[0,\"Remove Item\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[6,\"hr\"],[7],[8],[0,\"\\nTotal: $\"],[1,[20,[\"cart\",\"total\"]],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[2,\" {{#paper-list}}\\n  {{#each cart.items as |item|}}\\n    {{#paper-item class=\\\"md-3-line\\\"}}\\n      <div class=\\\"md-list-item-text\\\">\\n        <h3>{{item.name}}</h3>\\n        <h4>{{item.price}}</h4>\\n        <p>{{item.desc}}</p>\\n      </div>\\n      {{paper-divider}}\\n      {{#paper-button}}Remove{{/paper-button}}\\n    {{/paper-item}}\\n  {{/each}}\\n{{/paper-list}} \"],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "4jB8CXWi", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Name:\"],[8],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"removeItem\",[19,1,[]]]],[7],[0,\"Remove Item\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[6,\"button\"],[3,\"action\",[[19,0,[]],\"clear\"]],[7],[0,\"Clear Cart\"],[8],[0,\"\\n\"],[6,\"hr\"],[7],[8],[0,\"\\nTotal: $\"],[1,[20,[\"cart\",\"total\"]],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[2,\" {{#paper-list}}\\n  {{#each cart.items as |item|}}\\n    {{#paper-item class=\\\"md-3-line\\\"}}\\n      <div class=\\\"md-list-item-text\\\">\\n        <h3>{{item.name}}</h3>\\n        <h4>{{item.price}}</h4>\\n        <p>{{item.desc}}</p>\\n      </div>\\n      {{paper-divider}}\\n      {{#paper-button}}Remove{{/paper-button}}\\n    {{/paper-item}}\\n  {{/each}}\\n{{/paper-list}} \"],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
 });
 define("frontend/templates/components/fmenu-list", ["exports"], function (exports) {
   "use strict";

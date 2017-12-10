@@ -5,6 +5,10 @@ export default Service.extend({
   items: Ember.ArrayProxy.create({ content: Ember.A([]) }),
 
   monsterPrices: Ember.computed.mapBy('items', 'price'),
-  total: Ember.computed.sum('monsterPrices')
+  total: Ember.computed.sum('monsterPrices'),
+
+  clear(){
+    this.get('items').clear()
+  }
 
 });
