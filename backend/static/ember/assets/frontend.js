@@ -1353,6 +1353,22 @@ define('frontend/components/welcome-page', ['exports', 'ember-welcome-page/compo
     }
   });
 });
+define('frontend/controllers/checkout', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var Controller = Ember.Controller;
+  exports.default = Controller.extend({
+    actions: {
+      removeItem: function removeItem(item) {
+        this.get('cart.items').removeObject(item);
+        alert("Item deleted from cart");
+      }
+    }
+  });
+});
 define('frontend/controllers/menu', ['exports'], function (exports) {
   'use strict';
 
@@ -2252,15 +2268,15 @@ define('frontend/services/ajax', ['exports', 'ember-ajax/services/ajax'], functi
     }
   });
 });
-define('frontend/services/cart', ['exports'], function (exports) {
-  'use strict';
+define("frontend/services/cart", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   var Service = Ember.Service;
   exports.default = Service.extend({
-    items: Ember.ArrayProxy.create({ content: Ember.A(['test1', 'test2']) })
+    items: Ember.ArrayProxy.create({ content: Ember.A([]) })
 
   });
 });
@@ -2616,7 +2632,7 @@ define("frontend/templates/application", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "KwU0gKFW", "block": "{\"symbols\":[],\"statements\":[[4,\"paper-toolbar\",null,null,{\"statements\":[[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"menu\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"            \"],[6,\"h1\"],[7],[0,\"\\n              \"],[6,\"em\"],[7],[0,\"AfriCuisine\"],[8],[0,\"\\n            \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"          \"],[6,\"div\"],[9,\"class\",\"links\"],[7],[0,\"\\n            \"],[4,\"link-to\",[\"home\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"home\"],null],false],[0,\"\\n              Home\\n\"]],\"parameters\":[]},null],[0,\"            \"],[4,\"link-to\",[\"menu\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"restaurant-menu\"],null],false],[0,\"\\n              Menu\\n\"]],\"parameters\":[]},null],[0,\"           \"],[4,\"link-to\",[\"about\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"group\"],null],false],[0,\"\\n          About\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"contact\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"contacts\"],null],false],[0,\"\\n          Contact\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"login\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"account-circle\"],null],false],[0,\"\\n          Login\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"checkout\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"shopping-cart\"],null],false],[0,\"\\n          Cart\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"body\"],[7],[0,\"\\n          \"],[1,[18,\"outlet\"],false],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"footer\"],[7],[0,\"\\n  \\t    \"],[6,\"p\"],[7],[0,\"©AfriCuisine 2017\"],[8],[0,\"\\n  \\t\"],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/application.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "jfrSnl1s", "block": "{\"symbols\":[],\"statements\":[[4,\"paper-toolbar\",null,null,{\"statements\":[[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"menu\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"            \"],[6,\"h1\"],[7],[0,\"\\n              \"],[6,\"em\"],[7],[0,\"AfriCuisine\"],[8],[0,\"\\n            \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"          \"],[6,\"div\"],[9,\"class\",\"links\"],[7],[0,\"\\n            \"],[4,\"link-to\",[\"home\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"home\"],null],false],[0,\"\\n              Home\\n\"]],\"parameters\":[]},null],[0,\"            \"],[4,\"link-to\",[\"menu\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"restaurant-menu\"],null],false],[0,\"\\n              Menu\\n\"]],\"parameters\":[]},null],[0,\"           \"],[4,\"link-to\",[\"about\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"group\"],null],false],[0,\"\\n          About\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"contact\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"contacts\"],null],false],[0,\"\\n          Contact\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"login\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"account-circle\"],null],false],[0,\"\\n          Login\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"checkout\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"shopping-cart\"],null],false],[0,\"\\n          Cart: \"],[1,[20,[\"cart\",\"items\",\"length\"]],false],[0,\" Items\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"body\"],[7],[0,\"\\n          \"],[1,[18,\"outlet\"],false],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"footer\"],[7],[0,\"\\n  \\t    \"],[6,\"p\"],[7],[0,\"©AfriCuisine 2017\"],[8],[0,\"\\n  \\t\"],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/application.hbs" } });
 });
 define("frontend/templates/checkout", ["exports"], function (exports) {
   "use strict";
@@ -2624,7 +2640,7 @@ define("frontend/templates/checkout", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "DBU30fMO", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "tea/F/pZ", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Name:\"],[8],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"removeItem\",[19,1,[]]]],[7],[0,\"Remove Item\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8],[0,\"\\n\\n\"],[2,\" {{#paper-list}}\\n  {{#each cart.items as |item|}}\\n    {{#paper-item class=\\\"md-3-line\\\"}}\\n      <div class=\\\"md-list-item-text\\\">\\n        <h3>{{item.name}}</h3>\\n        <h4>{{item.price}}</h4>\\n        <p>{{item.desc}}</p>\\n      </div>\\n      {{paper-divider}}\\n      {{#paper-button}}Remove{{/paper-button}}\\n    {{/paper-item}}\\n  {{/each}}\\n{{/paper-list}} \"],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
 });
 define("frontend/templates/components/fmenu-list", ["exports"], function (exports) {
   "use strict";

@@ -45,6 +45,11 @@ define('frontend/tests/app.lint-test', [], function () {
     assert.ok(true, 'components/fmenu-list.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/checkout.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/checkout.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/menu.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/menu.js should pass ESLint\n\n');
@@ -359,6 +364,11 @@ define('frontend/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/adapters/menu-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/controllers/checkout-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/checkout-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/controllers/menu-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/controllers/menu-test.js should pass ESLint\n\n');
@@ -445,6 +455,20 @@ define('frontend/tests/unit/adapters/menu-test', ['ember-qunit'], function (_emb
   (0, _emberQunit.test)('it exists', function (assert) {
     var adapter = this.subject();
     assert.ok(adapter);
+  });
+});
+define('frontend/tests/unit/controllers/checkout-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('controller:checkout', 'Unit | Controller | checkout', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var controller = this.subject();
+    assert.ok(controller);
   });
 });
 define('frontend/tests/unit/controllers/menu-test', ['ember-qunit'], function (_emberQunit) {

@@ -2,6 +2,6 @@ import Service from '@ember/service';
 import Ember from "ember";
 
 export default Service.extend({
-  items: Ember.ArrayProxy.create({ content: Ember.A(['test1','test2']) })
+  items: Ember.ArrayProxy.create({ content: Ember.A([]) })
 
 });

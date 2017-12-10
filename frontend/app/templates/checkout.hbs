@@ -2,9 +2,25 @@
 {{#each cart.items as |item|}}
 <div class="cart-item">
   <div class="details">
-  {{item.name}}
-  {{item.price}}
+  <span>Name:</span>{{item.name}}
+  <br>
+  <span>Price:$</span>{{item.price}}
   </div>
+  <button {{action 'removeItem' item}}>Remove Item</button>
 </div>
 {{/each}}
 </div>
+
+<!-- {{#paper-list}}
+  {{#each cart.items as |item|}}
+    {{#paper-item class="md-3-line"}}
+      <div class="md-list-item-text">
+        <h3>{{item.name}}</h3>
+        <h4>{{item.price}}</h4>
+        <p>{{item.desc}}</p>
+      </div>
+      {{paper-divider}}
+      {{#paper-button}}Remove{{/paper-button}}
+    {{/paper-item}}
+  {{/each}}
+{{/paper-list}} -->
