@@ -2624,7 +2624,7 @@ define("frontend/templates/about", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "QKcch10D", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\"About AfriCuisine\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"\\n    AfriCuisine is on going restaurant project. \"],[6,\"br\"],[7],[8],[0,\"The project is to provide customers with fast and secure methods for placing food orders online.\"],[6,\"br\"],[7],[8],[0,\"\\n    With diversity of food, the restaurant will serve meals of different nature made in Africa.\"],[6,\"br\"],[7],[8],[0,\"\\n    We explore different African food such Casava and Fufu.\\n  \"],[8],[0,\"\\n\"],[4,\"link-to\",[\"contact\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"  Contact Us\\n\"]],\"parameters\":[]},null],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/about.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "qqV4suR9", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\"About AfriCuisine\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"\\n    AfriCuisine is on going restaurant project. \"],[6,\"br\"],[7],[8],[0,\"The project will provide customers with fast and secure methods for placing food orders online.\"],[6,\"br\"],[7],[8],[0,\"\\n    With diversity of food, the restaurant will serve meals of different nature made in Africa.\"],[6,\"br\"],[7],[8],[0,\"\\n    We explore different African food such Casava and Fufu.\\n  \"],[8],[0,\"\\n\"],[4,\"link-to\",[\"contact\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"  Contact Us\\n\"]],\"parameters\":[]},null],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/about.hbs" } });
 });
 define("frontend/templates/application", ["exports"], function (exports) {
   "use strict";
@@ -2664,7 +2664,7 @@ define("frontend/templates/contact", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "7PrD854x", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\"Contact Us\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"AfriCuisine customer Representatives would love to help you\"],[6,\"br\"],[7],[8],[0,\"order our fabilous menu or answer\\n    any questions you may have.\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"\\n    AfriCuisine Restaurant\\n    \"],[6,\"address\"],[7],[0,\"\\n      1026 Q Street \"],[6,\"br\"],[7],[8],[0,\"\\n      Omaha, NE 68127\\n    \"],[8],[0,\"\\n    \"],[6,\"a\"],[9,\"href\",\"tel:402.333.1111\"],[7],[0,\"+1 (402)333-1111\"],[8],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"a\"],[9,\"href\",\"mailto:africuisine@yahoo.fr\"],[7],[0,\"africuisine@yahoo.fr\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[4,\"link-to\",[\"about\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"  About\\n\"]],\"parameters\":[]},null],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/contact.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "cLUSZNAm", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"jumbo\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"\"],[7],[8],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\"Contact Us\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"AfriCuisine customer Representatives would love to help you\"],[6,\"br\"],[7],[8],[0,\"order our fabulous menu or answer\\n    any questions you may have.\"],[8],[0,\"\\n  \"],[6,\"p\"],[7],[0,\"\\n    AfriCuisine Restaurant\\n    \"],[6,\"address\"],[7],[0,\"\\n      1026 Q Street \"],[6,\"br\"],[7],[8],[0,\"\\n      Omaha, NE 68127\\n    \"],[8],[0,\"\\n    \"],[6,\"a\"],[9,\"href\",\"tel:402.333.1111\"],[7],[0,\"+1 (402)333-1111\"],[8],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"a\"],[9,\"href\",\"mailto:africuisine@yahoo.fr\"],[7],[0,\"africuisine@yahoo.fr\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[4,\"link-to\",[\"about\"],[[\"class\"],[\"button\"]],{\"statements\":[[0,\"  About\\n\"]],\"parameters\":[]},null],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/contact.hbs" } });
 });
 define("frontend/templates/home", ["exports"], function (exports) {
   "use strict";
@@ -2753,6 +2753,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+eef72a92"});
+  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+84d97b24"});
 }
 //# sourceMappingURL=frontend.map
