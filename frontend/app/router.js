@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('home');
   this.route('login');
   this.route('checkout');
+  this.route('notfound', { path: '/*path' });
 });
 
 export default Router;
