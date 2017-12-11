@@ -4,41 +4,20 @@
   <h4>{{item.name}}</h4>
 
   <span>Price:$</span>{{item.price}}
-
-  <button {{action 'removeItem' item}}>Remove Item</button>
+&nbsp;&nbsp;
+  <!-- <button {{action 'removeItem' item}}>Remove Item</button> -->
+  {{#paper-button raised=true onClick=(action "removeItem" item)}}Remove Item{{/paper-button}}
 </div>
 {{/each}}
-<button {{action 'clear'}}>Clear Cart</button>
+<!-- <button {{action 'clear'}}>Clear Cart</button> -->
+{{#paper-button raised=true primary=true onClick=(action "clear")}}Clear Cart{{/paper-button}}
 <hr>
 Total: ${{cart.total}}
 </article>
+
 {{stripe-checkout
   name="Africuisine Inc."
   description="Buy Food Items"
   amount=cart.centsTotal
   action="processStripeToken"
 }}
-
-<!-- {{#paper-list}}
-  {{#each cart.items as |item|}}
-    {{#paper-item class="md-3-line"}}
-      <div class="md-list-item-text">
-        <h3>{{item.name}}</h3>
-        <h4>{{item.price}}</h4>
-        <p>{{item.desc}}</p>
-      </div>
-      {{paper-divider}}
-      {{#paper-button}}{{action 'removeItem' item}}Remove{{/paper-button}}
-    {{/paper-item}}
-  {{/each}}
-  <button {{action 'clear'}}>Clear Cart</button>
-  <hr>
-  Total: ${{cart.total}}
-{{/paper-list}}
-
-{{stripe-checkout
-  name="Africuisine Inc."
-  description="Buy Food Items"
-  amount=cart.centsTotal
-  action="processStripeToken"
-}} -->

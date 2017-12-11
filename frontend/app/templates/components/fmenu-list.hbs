@@ -2,7 +2,7 @@
 {{m.desc}}
 {{/each}}  -->
 
-  <article class="listing">
+  <article class="listing" align=center>
   <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}">
     <img src="{{fmenu.image}}" alt="">
     <small>View Larger</small>
@@ -11,11 +11,12 @@
     <div class="detail desc">
       <span>Description:</span> {{fmenu.desc}}
     </div>
-    <div class="detail price">
+    <!-- <div class="detail price"> -->
       <span>Price:$</span> {{fmenu.price}}
-    </div>
-    <div class="detail calories">
+    <!-- </div> -->
+    <!-- <div class="detail calories"> -->
       <span> Calories:</span> {{fmenu.calories}}
-    </div>
-    <button {{action 'additem' fmenu}}>Add to Cart</button>
+    <!-- </div> -->
+    <!-- <button {{action 'additem' fmenu}}>Add to Cart</button> -->
+      {{#paper-button raised=true onClick=(action "additem" fmenu)}}Add to Cart{{/paper-button}}
   </article>
