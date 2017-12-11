@@ -9,6 +9,8 @@ export default Service.extend({
 
   clear(){
     this.get('items').clear()
-  }
-
+  },
+  centsTotal: Ember.computed('total', function(){
+    return this.get('total') * 100;
+  })
 });

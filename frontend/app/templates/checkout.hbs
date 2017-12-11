@@ -13,6 +13,12 @@
 <hr>
 Total: ${{cart.total}}
 </div>
+{{stripe-checkout
+  name="Africuisine Inc."
+  description="Buy Food Items"
+  amount=cart.centsTotal
+  action="processStripeToken"
+}}
 
 <!-- {{#paper-list}}
   {{#each cart.items as |item|}}

@@ -30,6 +30,10 @@ module.exports = function(environment) {
     ENV['ember-cli-mirage'] = {
     enabled: false
     };
+
+    ENV.stripe = {
+      key: "pk_test_4zsTYVAAk7DThA8bfZ1Lq2qX"
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

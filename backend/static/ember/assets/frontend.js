@@ -1314,6 +1314,19 @@ define('frontend/components/slick-slider', ['exports', 'ember-cli-slick/componen
     }
   });
 });
+define('frontend/components/stripe-checkout', ['exports', 'ember-cli-stripe/components/stripe-checkout'], function (exports, _stripeCheckout) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _stripeCheckout.default;
+    }
+  });
+});
 define('frontend/components/transition-group', ['exports', 'ember-css-transitions/components/transition-group'], function (exports, _transitionGroup) {
   'use strict';
 
@@ -2047,6 +2060,28 @@ define('frontend/initializers/store', ['exports'], function (exports) {
     initialize: function initialize() {}
   };
 });
+define('frontend/initializers/stripe', ['exports', 'frontend/config/environment'], function (exports, _environment) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.initialize = initialize;
+  function initialize() {
+    var application = arguments[1] || arguments[0];
+    var _config$stripe = _environment.default.stripe,
+        stripe = _config$stripe === undefined ? {} : _config$stripe;
+
+
+    application.register('config:stripe', stripe, { instantiate: false });
+    application.inject('service:stripe', 'stripeConfig', 'config:stripe');
+  }
+
+  exports.default = {
+    name: 'stripe',
+    initialize: initialize
+  };
+});
 define('frontend/initializers/transforms', ['exports'], function (exports) {
   'use strict';
 
@@ -2286,7 +2321,11 @@ define('frontend/services/cart', ['exports'], function (exports) {
 
     clear: function clear() {
       this.get('items').clear();
-    }
+    },
+
+    centsTotal: Ember.computed('total', function () {
+      return this.get('total') * 100;
+    })
   });
 });
 define('frontend/services/constants', ['exports'], function (exports) {
@@ -2470,6 +2509,14 @@ define('frontend/services/sniffer', ['exports'], function (exports) {
     }
   });
 });
+define('frontend/services/stripe', ['exports', 'ember-cli-stripe/services/stripe'], function (exports, _stripe) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _stripe.default;
+});
 define('frontend/services/text-measurer', ['exports', 'ember-text-measurer/services/text-measurer'], function (exports, _textMeasurer) {
   'use strict';
 
@@ -2641,7 +2688,7 @@ define("frontend/templates/application", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "jfrSnl1s", "block": "{\"symbols\":[],\"statements\":[[4,\"paper-toolbar\",null,null,{\"statements\":[[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"menu\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"            \"],[6,\"h1\"],[7],[0,\"\\n              \"],[6,\"em\"],[7],[0,\"AfriCuisine\"],[8],[0,\"\\n            \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"          \"],[6,\"div\"],[9,\"class\",\"links\"],[7],[0,\"\\n            \"],[4,\"link-to\",[\"home\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"home\"],null],false],[0,\"\\n              Home\\n\"]],\"parameters\":[]},null],[0,\"            \"],[4,\"link-to\",[\"menu\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"restaurant-menu\"],null],false],[0,\"\\n              Menu\\n\"]],\"parameters\":[]},null],[0,\"           \"],[4,\"link-to\",[\"about\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"group\"],null],false],[0,\"\\n          About\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"contact\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"contacts\"],null],false],[0,\"\\n          Contact\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"login\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"account-circle\"],null],false],[0,\"\\n          Login\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"checkout\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"shopping-cart\"],null],false],[0,\"\\n          Cart: \"],[1,[20,[\"cart\",\"items\",\"length\"]],false],[0,\" Items\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"body\"],[7],[0,\"\\n          \"],[1,[18,\"outlet\"],false],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"footer\"],[7],[0,\"\\n  \\t    \"],[6,\"p\"],[7],[0,\"©AfriCuisine 2017\"],[8],[0,\"\\n  \\t\"],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/application.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "Bh9PkhiB", "block": "{\"symbols\":[],\"statements\":[[4,\"paper-toolbar\",null,null,{\"statements\":[[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"menu\"],[7],[0,\"\\n\"],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"            \"],[6,\"h1\"],[7],[0,\"\\n              \"],[6,\"em\"],[7],[0,\"AfriCuisine\"],[8],[0,\"\\n            \"],[8],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"          \"],[6,\"div\"],[9,\"class\",\"links\"],[7],[0,\"\\n            \"],[4,\"link-to\",[\"home\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"home\"],null],false],[0,\"\\n              Home\\n\"]],\"parameters\":[]},null],[0,\"            \"],[4,\"link-to\",[\"menu\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"restaurant-menu\"],null],false],[0,\"\\n              Menu\\n\"]],\"parameters\":[]},null],[0,\"           \"],[4,\"link-to\",[\"about\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"group\"],null],false],[0,\"\\n          About\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"contact\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"contacts\"],null],false],[0,\"\\n          Contact\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"checkout\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"shopping-cart\"],null],false],[0,\"\\n          Cart: \"],[1,[20,[\"cart\",\"items\",\"length\"]],false],[0,\" Items\\n\"]],\"parameters\":[]},null],[0,\"        \"],[4,\"link-to\",[\"login\"],null,{\"statements\":[[1,[25,\"paper-icon\",[\"account-circle\"],null],false],[0,\"\\n          Login\\n\"]],\"parameters\":[]},null],[0,\"      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"body\"],[7],[0,\"\\n          \"],[1,[18,\"outlet\"],false],[0,\"\\n  \"],[8],[0,\"\\n    \"],[6,\"footer\"],[7],[0,\"\\n  \\t    \"],[6,\"p\"],[7],[0,\"©AfriCuisine 2017\"],[8],[0,\"\\n  \\t\"],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/application.hbs" } });
 });
 define("frontend/templates/checkout", ["exports"], function (exports) {
   "use strict";
@@ -2649,7 +2696,7 @@ define("frontend/templates/checkout", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "4jB8CXWi", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Name:\"],[8],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"removeItem\",[19,1,[]]]],[7],[0,\"Remove Item\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[6,\"button\"],[3,\"action\",[[19,0,[]],\"clear\"]],[7],[0,\"Clear Cart\"],[8],[0,\"\\n\"],[6,\"hr\"],[7],[8],[0,\"\\nTotal: $\"],[1,[20,[\"cart\",\"total\"]],false],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[2,\" {{#paper-list}}\\n  {{#each cart.items as |item|}}\\n    {{#paper-item class=\\\"md-3-line\\\"}}\\n      <div class=\\\"md-list-item-text\\\">\\n        <h3>{{item.name}}</h3>\\n        <h4>{{item.price}}</h4>\\n        <p>{{item.desc}}</p>\\n      </div>\\n      {{paper-divider}}\\n      {{#paper-button}}Remove{{/paper-button}}\\n    {{/paper-item}}\\n  {{/each}}\\n{{/paper-list}} \"],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "CwGnajQr", "block": "{\"symbols\":[\"item\"],\"statements\":[[6,\"div\"],[9,\"class\",\"cart\"],[7],[0,\"\\n\"],[4,\"each\",[[20,[\"cart\",\"items\"]]],null,{\"statements\":[[6,\"div\"],[9,\"class\",\"cart-item\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"details\"],[7],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Name:\"],[8],[1,[19,1,[\"name\"]],false],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n  \"],[6,\"span\"],[7],[0,\"Price:$\"],[8],[1,[19,1,[\"price\"]],false],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"button\"],[3,\"action\",[[19,0,[]],\"removeItem\",[19,1,[]]]],[7],[0,\"Remove Item\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[6,\"button\"],[3,\"action\",[[19,0,[]],\"clear\"]],[7],[0,\"Clear Cart\"],[8],[0,\"\\n\"],[6,\"hr\"],[7],[8],[0,\"\\nTotal: $\"],[1,[20,[\"cart\",\"total\"]],false],[0,\"\\n\"],[8],[0,\"\\n\"],[1,[25,\"stripe-checkout\",null,[[\"name\",\"description\",\"amount\",\"action\"],[\"Africuisine Inc.\",\"Buy Food Items\",[20,[\"cart\",\"centsTotal\"]],\"processStripeToken\"]]],false],[0,\"\\n\\n\"],[2,\" {{#paper-list}}\\n  {{#each cart.items as |item|}}\\n    {{#paper-item class=\\\"md-3-line\\\"}}\\n      <div class=\\\"md-list-item-text\\\">\\n        <h3>{{item.name}}</h3>\\n        <h4>{{item.price}}</h4>\\n        <p>{{item.desc}}</p>\\n      </div>\\n      {{paper-divider}}\\n      {{#paper-button}}Remove{{/paper-button}}\\n    {{/paper-item}}\\n  {{/each}}\\n{{/paper-list}} \"],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "frontend/templates/checkout.hbs" } });
 });
 define("frontend/templates/components/fmenu-list", ["exports"], function (exports) {
   "use strict";
@@ -2762,6 +2809,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+338b56eb"});
+  require("frontend/app")["default"].create({"name":"frontend","version":"0.0.0+d2326709"});
 }
 //# sourceMappingURL=frontend.map
